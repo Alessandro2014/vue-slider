@@ -28,8 +28,10 @@ const root = new Vue({
             } else {
                 this.currentImg --;
             }
-        }
-        
+        },
+        currentPoints(indexPoints){
+            this.currentImg = indexPoints;
+        },
         
         
 

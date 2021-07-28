@@ -19,7 +19,7 @@
                     <div class="slider">
                         <img v-for="(url, i) in images" :src="url" :class="isActive(i)">
                         <div id="drop-points">
-                            <div v-for="(points, index) in images" :class="isActive(index)" class="points"></div>
+                            <div v-for="(points, index) in images" :class="isActive(index)"  @click="currentPoints(index)" class="points"></div>
                         </div>
                     </div>
                 </div>
