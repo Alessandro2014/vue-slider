@@ -3,6 +3,7 @@ console.log('vue ys ready', Vue);
 const root = new Vue({
     el: '#root',
     data: {
+        currentImg: 0,
         images:[
             'img/image1.jpg',
             'img/image2.jpg',
@@ -11,6 +12,26 @@ const root = new Vue({
         ],  
     },
     methods: {
+        isActive(i){
+            return this.currentImg === i ? 'active' : '';
+        },
+        forwardIndex(){
+            if (this.currentImg == this.images.length -1){
+                this.currentImg = 0;
+            } else {
+                this.currentImg ++;
+            }
+        },
+        backIndex(){
+            if (this.currentImg == 0){
+                this.currentImg = this.images.length -1;
+            } else {
+                this.currentImg --;
+            }
+        }
+        
+        
+        
 
     } 
 });
