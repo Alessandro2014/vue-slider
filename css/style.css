@@ -1,0 +1,15 @@
+.slider {
+    height: 500px;
+}
+
+.fas {
+    font-size: 4em;
+    color: rgb(75, 75, 75);
+    display: flex;
+    justify-content: center;
+    line-height: 500px;
+}
+
+img {
+    max-width: 100%;
+}
