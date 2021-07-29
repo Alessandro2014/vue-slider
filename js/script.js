@@ -1,5 +1,3 @@
-console.log('vue ys ready', Vue);
-
 const root = new Vue({
     el: '#root',
     data: {
@@ -9,7 +7,7 @@ const root = new Vue({
             'img/image2.jpg',
             'img/image3.jpg',
             'img/image4.jpg',
-        ],  
+        ], 
     },
     methods: {
         isActive(i){
@@ -21,6 +19,7 @@ const root = new Vue({
             } else {
                 this.currentImg ++;
             }
+            this.playSlider();
         },
         backIndex(){
             if (this.currentImg == 0){
@@ -28,12 +27,20 @@ const root = new Vue({
             } else {
                 this.currentImg --;
             }
+            this.playSlider();
         },
         currentPoints(indexPoints){
             this.currentImg = indexPoints;
         },
-        
-        
+        playSlider(){
+            if(this.timeoutId){
+                clearTimeout(this.timeoutId);
+            }
+            this.timeoutId= setTimeout(this.forwardIndex, 3000);
+        },
+    },
 
-    } 
+    created() {
+        this.playSlider();
+    },
 });

@@ -17,7 +17,7 @@
                 <div class="col-md-2 "><i class="fas fa-angle-left" @click="backIndex"></i></div>
                 <div class="col-md-8">
                     <div class="slider">
-                        <img v-for="(url, i) in images" :src="url" :class="isActive(i)">
+                        <img v-for="(url, i) in images" :src="url" :class="isActive(i)" @click="showSlides(indexShow)">
                         <div id="drop-points">
                             <div v-for="(points, index) in images" :class="isActive(index)"  @click="currentPoints(index)" class="points"></div>
                         </div>
